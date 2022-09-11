@@ -76,10 +76,10 @@ if option == 'What Data Set did I use?':
     st.markdown(body)
 
 if option == 'Further improvements':
-body = """
-The first model is trained using the 500 images of people's faces. If it is trained using wider range of humans images, the recognition of human can be perforemed with a higher accuracy
-"""
-st.markdown(body)
+    body = """
+    The first model is trained using the 500 images of people's faces. If it is trained using wider range of humans images, the recognition of human can be perforemed with a higher accuracy
+    """
+    st.markdown(body)
 
 if option == 'How does it differentiate between a human image and non-human image?':
     body = """
