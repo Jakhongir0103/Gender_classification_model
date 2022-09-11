@@ -63,7 +63,8 @@ col2.image('./examples/female.jpeg', caption="Female")
 options = [
     'Select',
     'What Data Set did I use?',
-    'How does it differentiate between a human image and non-human image?'
+    'How does it differentiate between a human image and non-human image?',
+    'Further improvements'
 ]
 option = st.selectbox('How I made it?', options, index=0)
 
@@ -73,6 +74,12 @@ if option == 'What Data Set did I use?':
     - [Open Image Dataset v4](https://storage.googleapis.com/openimages/web/index.html) which provides [600](https://storage.googleapis.com/openimages/2018_04/bbox_labels_600_hierarchy_visualizer/circle.html) classes
     """
     st.markdown(body)
+
+if option == 'Further improvements':
+body = """
+The first model is trained using the 500 images of people's faces. If it is trained using wider range of humans images, the recognition of human can be perforemed with a higher accuracy
+"""
+st.markdown(body)
 
 if option == 'How does it differentiate between a human image and non-human image?':
     body = """
