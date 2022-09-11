@@ -3,9 +3,6 @@ import pandas as pd
 import torch
 from fastai.vision.all import *
 import plotly.express as px
-import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
 
 # title
 st.markdown("<h1 style='text-align: center;'>Gender Classification</h1>", unsafe_allow_html=True)
