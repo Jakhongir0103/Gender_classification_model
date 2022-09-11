@@ -63,7 +63,7 @@ col2.image('./examples/female.jpeg', caption="Female")
 options = [
     'Select',
     'What Data Set did I use?',
-    'How does it differentiate between humans and non-humans?'
+    'How does it differentiate between a human image and non-human image?'
 ]
 option = st.selectbox('How I made it?', options, index=0)
 
@@ -74,7 +74,7 @@ if option == 'What Data Set did I use?':
     """
     st.markdown(body)
 
-if option == 'How does it differentiate between humans and non-humans?':
+if option == 'How does it differentiate between a human image and non-human image?':
     body = """
     I built 2 models. The first model differtiates humans from non-humans. If the given image includes a human, then the second model classifies the image by gender:
     1. **[Human recognition model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Human_classification_model.ipynb)** trained using 2 datasets:
