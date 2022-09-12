@@ -78,7 +78,7 @@ if option == 'What Data Set did I use?':
 if option == 'How does it differentiate between a human image and non-human image?':
     body = """
     I built 2 models. The first model differtiates humans from non-humans. If the given image includes a human, then the second model classifies the image by gender:
-    1. **[Human recognition model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Human_classification_model.ipynb)** trained using 2 types of data:
+    1. **[Human recognition model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Human_recognition_model.ipynb)** trained using 2 types of data:
         - 500 images from the class Animal of the Dataset3
         - 200 images from the class Person of the Dataset3 and 300 images from the Dataset1
     2. **[Gender Classification model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Gender_classification_model.ipynb)** trained using 2 datasets:
