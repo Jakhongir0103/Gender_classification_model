@@ -63,7 +63,8 @@ col2.image('./examples/female.jpeg', caption="Female")
 options = [
     'Select',
     'What Data Set did I use?',
-    'How does it differentiate between a human image and non-human image?'
+    'How does it differentiate between a human image and non-human image?',
+    'Link to the source code'
 ]
 option = st.selectbox('How I made it?', options, index=0)
 
@@ -84,5 +85,11 @@ if option == 'How does it differentiate between a human image and non-human imag
     2. **[Gender Classification model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Gender_classification_model.ipynb)** trained using 2 datasets:
         - ~1500 images of Males
         - ~1500 images of Females
+    """
+    st.markdown(body)
+
+if option == 'Link to the source code':
+    body = """
+    - [Source code](https://github.com/Jakhongir0103/Gender_classification_model.git)
     """
     st.markdown(body)
