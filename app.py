@@ -4,8 +4,10 @@ import torch
 from fastai.vision.all import *
 import plotly.express as px
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+import platform
+
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 # title
 st.markdown("<h1 style='text-align: center;'>Gender Classification</h1>", unsafe_allow_html=True)
@@ -61,31 +63,26 @@ col2.image('./examples/female.jpeg', caption="Female")
 options = [
     'Select',
     'What Data Set did I use?',
-    'How does it differentiate between humans and non-humans?'
+    'How does it differentiate between a human image and non-human image?'
 ]
 option = st.selectbox('How I made it?', options, index=0)
 
 if option == 'What Data Set did I use?':
     body = """
-    - [Male and female faces dataset](https://www.kaggle.com/datasets/ashwingupta3012/male-and-female-faces-dataset) provided by > Kaggle
-    - [Open Image Dataset v4](https://storage.googleapis.com/openimages/web/index.html) which provides [600](https://storage.googleapis.com/openimages/2018_04/bbox_labels_600_hierarchy_visualizer/circle.html) classes
+    - [Human faces dataset](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) (Dataset1)
+    - [Male and female faces dataset](https://www.kaggle.com/datasets/ashwingupta3012/male-and-female-faces-dataset) provided by > Kaggle (Dataset2)
+    - [Open Image Dataset v4](https://storage.googleapis.com/openimages/web/index.html) which provides [600](https://storage.googleapis.com/openimages/2018_04/bbox_labels_600_hierarchy_visualizer/circle.html) classes (Dataset3)
     """
     st.markdown(body)
 
-if option == 'How does it differentiate between humans and non-humans?':
+if option == 'How does it differentiate between a human image and non-human image?':
     body = """
     I built 2 models. The first model differtiates humans from non-humans. If the given image includes a human, then the second model classifies the image by gender:
-    1. **[Human recognition model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Human_classification_model.ipynb)** trained using 2 datasets:
-        - 500 images from the class Animal of the [Dataset](https://storage.googleapis.com/openimages/web/index.html)
-        - 500 images from the Male/Female [Dataset](https://www.kaggle.com/datasets/ashwingupta3012/male-and-female-faces-dataset) 
+    1. **[Human recognition model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Human_recognition_model.ipynb)** trained using 2 types of data:
+        - 500 images from the class Animal of the Dataset3
+        - 200 images from the class Person of the Dataset3 and 300 images from the Dataset1
     2. **[Gender Classification model](https://github.com/Jakhongir0103/Gender_classification_model/blob/main/Gender_classification_model.ipynb)** trained using 2 datasets:
         - ~1500 images of Males
         - ~1500 images of Females
     """
     st.markdown(body)
-
-if option == 'What Data Base did I use?':
-    st.markdown(body)
-
-if option == 'What Data Base did I use?':
-    st.write(option)
